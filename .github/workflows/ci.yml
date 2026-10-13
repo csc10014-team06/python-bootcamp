@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  bootcamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install pytest ruff
+      - name: Prepare python-bootcamp directory if at repo root
+        run: |
+          if [ ! -d "python-bootcamp" ]; then
+            mkdir python-bootcamp
+            ln -s ../members python-bootcamp/members
+            ln -s ../shared python-bootcamp/shared
+            ln -s ../tests python-bootcamp/tests
+            ln -s ../ruff.toml python-bootcamp/ruff.toml
+          fi
+      - run: ruff check python-bootcamp
+      - run: pytest -q python-bootcamp
