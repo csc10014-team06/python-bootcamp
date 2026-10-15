@@ -19,5 +19,3 @@ def summary(scores: list[float]) -> dict:
         "mean": round(meanVal, 2),
         "median": round(medianVal, 2)
     }
-
-print(summary([1.4, 2, 5, 2.5]))
