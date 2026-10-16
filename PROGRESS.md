@@ -2,7 +2,7 @@
 
 | Member | Week | Issue | PR | Reviewer | Tests | Hours |
 |--------|------|-------|----|----------|-------|-------|
-| long_th | w1 | #9 | #13 | nhat_dm | 5/5 | 3 |
+| long_th | w1 | #9 | #13 | vy_th | 5/5 | 3 |
 | long_th | w2 |  |  |  |  |  |
 | long_th | w3 |  |  |  |  |  |
 | long_th | w4 |  |  |  |  |  |
@@ -17,7 +17,7 @@
 | vy_th | w3 |  |  |  |  |  |
 | vy_th | w4 |  |  |  |  |  |
 | vy_th | w5 |  |  |  |  |  |
-| han_htg | w1 |  |  |  |  |  |
+| han_htg | w1 | #16 | #19 | nhat_dm | 5/5 | 4 |
 | han_htg | w2 |  |  |  |  |  |
 | han_htg | w3 |  |  |  |  |  |
 | han_htg | w4 |  |  |  |  |  |
