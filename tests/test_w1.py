@@ -37,9 +37,14 @@ def test_w1_4_translate(load, variant):
     elif variant == 3:
         assert tr.transpose([[1, 2, 3], [4, 5, 6]]) == [[1, 4], [2, 5], [3, 6]]
         assert tr.transpose([]) == []
-    else:
+    elif variant == 4:
         assert tr.primes_up_to(20) == [2, 3, 5, 7, 11, 13, 17, 19]
         assert tr.primes_up_to(1) == []
+    elif variant == 5:
+        assert tr.gcd(48, 18) == 6
+        assert tr.gcd(12, 6) == 6
+        assert tr.gcd(7, 5) == 1
+        assert tr.gcd(0, 7) == 7
     assert tr.__doc__ or any(getattr(tr, n).__doc__ for n in dir(tr) if callable(getattr(tr, n)))
 
 

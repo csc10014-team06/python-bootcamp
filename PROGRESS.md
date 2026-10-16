@@ -12,7 +12,7 @@
 | dieu_sp | w3 |  |  |  |  |  |
 | dieu_sp | w4 |  |  |  |  |  |
 | dieu_sp | w5 |  |  |  |  |  |
-| vy_th | w1 |  |  |  |  |  |
+| vy_th | w1 |  #14|  #15|  han\_htg |  5/5|  2.5|
 | vy_th | w2 |  |  |  |  |  |
 | vy_th | w3 |  |  |  |  |  |
 | vy_th | w4 |  |  |  |  |  |
