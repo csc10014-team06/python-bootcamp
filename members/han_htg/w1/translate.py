@@ -34,3 +34,5 @@ def insertion_sort(nums: list[int]):
             nums[j + 1] = nums[j]
             j -= 1
         nums[j + 1] = key
+
+    return nums
