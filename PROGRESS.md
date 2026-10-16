@@ -2,7 +2,7 @@
 
 | Member | Week | Issue | PR | Reviewer | Tests | Hours |
 |--------|------|-------|----|----------|-------|-------|
-| long_th | w1 |  |  |  |  |  |
+| long_th | w1 | #9 | #13 | nhat_dm | 5/5 | 3 |
 | long_th | w2 |  |  |  |  |  |
 | long_th | w3 |  |  |  |  |  |
 | long_th | w4 |  |  |  |  |  |
