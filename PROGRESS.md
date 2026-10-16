@@ -22,7 +22,7 @@
 | han_htg | w3 |  |  |  |  |  |
 | han_htg | w4 |  |  |  |  |  |
 | han_htg | w5 |  |  |  |  |  |
-| truyen_lp | w1 |  |  |  |  |  |
+| truyen_lp | w1 | #17|  #20|  dieu_sp |  5/5|  3 |
 | truyen_lp | w2 |  |  |  |  |  |
 | truyen_lp | w3 |  |  |  |  |  |
 | truyen_lp | w4 |  |  |  |  |  |
