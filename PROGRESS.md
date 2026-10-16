@@ -7,7 +7,7 @@
 | long_th | w3 |  |  |  |  |  |
 | long_th | w4 |  |  |  |  |  |
 | long_th | w5 |  |  |  |  |  |
-| dieu_sp | w1 |  |  |  |  |  |
+| dieu_sp | w1 | #29 | #30 | nhat_npm | 5/5 | 1 |
 | dieu_sp | w2 |  |  |  |  |  |
 | dieu_sp | w3 |  |  |  |  |  |
 | dieu_sp | w4 |  |  |  |  |  |
