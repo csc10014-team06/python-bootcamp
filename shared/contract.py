@@ -1,17 +1,14 @@
-"""shared/contract.py
-
-Team code contract for exercises T-W2 and T-W3.
-Defines shared interfaces and Task contract.
-"""
-
 from dataclasses import dataclass
-
+from datetime import date
 
 @dataclass
 class Task:
-    """Represents a shared task item for team exercises."""
-    id: int
     title: str
-    description: str = ""
-    completed: bool = False
-    assigned_to: str | None = None
+    importance: int # 1-5
+    effort_h: float
+    deadline: date
+
+@dataclass
+class Block:
+    task: Task
+    hours: float
