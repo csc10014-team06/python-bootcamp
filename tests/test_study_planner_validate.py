@@ -11,7 +11,6 @@ def test_validate_valid_tasks():
         Task(title="Assignment", importance=4, effort_h=2.0, deadline=date(2026, 10, 27)),
         Task(title="DS Exam", importance=5, effort_h=6.0, deadline=date(2026, 10, 30)),
     ]
-    # Dữ liệu chuẩn phải trả về mảng rỗng (không có lỗi)
     assert validate(tasks, today) == []
 
 
