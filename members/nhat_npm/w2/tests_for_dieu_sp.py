@@ -22,29 +22,36 @@ def test_w1_2_word_count_edge_case(load):
 def test_w1_3_thesis_edge_case(load):
     r = load("w1", "rules")
 
-    # EDGE CASE: Exactly enough credits, but GPA is below the threshold.
-    assert not r.can_register_thesis(120, 1.99)
-    assert r.missing(120, 1.99) == ["GPA must be at least 2.0"]
+    # EDGE CASE: Enough credits, but GPA is below the threshold.
+    credits = 120
+    gpa = 1.99
+
+    assert not r.can_register_thesis(credits, gpa)
+    assert r.missing(credits, gpa) == [
+        f"GPA {gpa:.2f} is below 2.0"
+    ]
 
 
-def test_w1_4_gcd(load):
+def test_w1_4_bubble_sort(load):
     tr = load("w1", "translate")
 
-    assert tr.gcd(8, 15) == 1
-    assert tr.gcd(0, 7) == 7
-    assert tr.gcd(7, 0) == 7
+    assert tr.bubble_sort([3, 1, 2]) == [1, 2, 3]
+    assert tr.bubble_sort([1, 2, 3]) == [1, 2, 3]
+    assert tr.bubble_sort([3, 2, 1]) == [1, 2, 3]
 
-    # EDGE CASE: Both inputs are zero.
-    assert tr.gcd(0, 0) == 0
+    # EDGE CASE: Empty input.
+    assert tr.bubble_sort([]) == []
 
-    # EDGE CASE: Consecutive Fibonacci numbers require multiple iterations.
-    assert tr.gcd(55, 89) == 1
+    # EDGE CASE: A single element needs no swaps.
+    assert tr.bubble_sort([42]) == [42]
 
-    assert tr.gcd(12, 12) == 12
-    assert tr.gcd(84, 126) == 42
+    assert tr.bubble_sort([5, 5, 2, 2, 1]) == [1, 2, 2, 5, 5]
 
-    # EDGE CASE: Python integers can exceed C++ long long limits.
-    assert tr.gcd(10**100, 3 * 10**100) == 10**100
+    # EDGE CASE: Sorting must not lose or duplicate repeated values.
+    values = [4, 1, 4, 2, 1]
+    result = tr.bubble_sort(values)
+    assert result == [1, 1, 2, 4, 4]
+    assert sorted(result) == sorted(values)
 
 
 def test_w1_5_timetable_edge_case(load):
