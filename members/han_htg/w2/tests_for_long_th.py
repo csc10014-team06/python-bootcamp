@@ -1,7 +1,7 @@
 import pytest
 
 
-def test_grades_summary(load):
+def test_long_th_summary(load):
     g = load("w1", "grades")
     res = g.summary([-2.5, 4.0, 8.5])
     assert res == {"min": -2.5, "max": 8.5, "mean": 3.33, "median": 4.0}
@@ -16,22 +16,22 @@ def test_grades_summary(load):
         g.summary([])
 
 
-def test_word_count(load):
+def test_long_th_word_count(load):
     t = load("w1", "text_tools")
     assert t.word_count("     ") == {}
     assert t.word_count("... !? :; ,. ---") == {}
 
-    assert t.word_count("Hello, hello! HELLO?") == {"hello": 3}
+    assert t.word_count("Hello, hello!!!!!!! HELLO????!!!???") == {"hello": 3}
 
     sample = "apple banana apple orange apple banana"
     assert t.top_k(sample, 0) == []
     assert t.top_k(sample, 10) == [("apple", 3), ("banana", 2), ("orange", 1)]
 
-    ties = "cat bat bat cat ant"
-    assert t.top_k(ties, 2) == [("bat", 2), ("cat", 2)]
+    ties = "maroon red golden red maroon"
+    assert t.top_k(ties, 2) == [("maroon", 2), ("red", 2)]
 
 
-def test_thesis(load):
+def test_long_th_thesis(load):
     r = load("w1", "rules")
     assert r.can_register_thesis(120, 2.0)
     assert r.missing(120, 2.0) == []
@@ -47,7 +47,7 @@ def test_thesis(load):
     assert len(r.missing(80, 1.4)) == 2
 
 
-def test_translate(load, variant):
+def test_long_th_translate(load, variant):
     tr = load("w1", "translate")
     if variant == 1:
         arr = [-10, -5, 0, 7, 20]
@@ -78,15 +78,15 @@ def test_translate(load, variant):
         assert tr.gcd(100, 100) == 100
 
 
-def test_timetable(load):
+def test_long_th_by_day(load):
     tt = load("w1", "timetable")
     raw_schedule = [
-        ("Z999", "Fri"),
-        ("A001", "Fri"),
+        ("Z1989", "Fri"),
+        ("A13", "Fri"),
         ("CSC10014", "Wed"),
         ("MTH00003", "Fri"),
     ]
     got = tt.by_day(raw_schedule)
-    assert got.get("Fri") == ["A001", "MTH00003", "Z999"]
+    assert got.get("Fri") == ["A13", "MTH00003", "Z1989"]
     assert got.get("Wed") == ["CSC10014"]
     assert tt.by_day([]) == {}
