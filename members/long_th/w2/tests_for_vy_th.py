@@ -1,7 +1,7 @@
 import pytest
 
 
-def tests_for_han_htg_summary(load):
+def tests_for_vy_th_summary(load):
     g = load("w1", "grades")
     assert g.summary([7.521, 9.32, 6.12, 8.45]) == {"min": 6.12, "max": 9.32, "mean": 7.84, "median": 7.99}
     assert g.summary([5.678, 5.942, 5.401]) == {"min": 5.401, "max": 5.942, "mean": 5.673, "median": 5.678}
@@ -10,7 +10,7 @@ def tests_for_han_htg_summary(load):
         g.summary([])
 
 
-def tests_for_han_htg_word_count(load):
+def tests_for_vy_th_word_count(load):
     t = load("w1", "text_tools")
     assert t.word_count("Data science is a interdisciplinary field.") == {"data": 1, "science": 1, "is": 1, "a": 1, "interdisciplinary": 1, "field": 1}
     assert t.top_k("Data science is a interdisciplinary field.", 2) == [("data", 1), ("science", 1)]
@@ -20,7 +20,7 @@ def tests_for_han_htg_word_count(load):
     assert t.top_k("python python python Java Java JavaScript", 3) == [("python", 3), ("java", 2), ("javascript", 1)]
     assert t.top_k("", 3) == []
 
-def tests_for_han_htg_thesis(load):
+def tests_for_vy_th_thesis(load):
     r = load("w1", "rules")
     assert r.can_register_thesis(120, 2.0)
     assert r.can_register_thesis(119, 3.0)
@@ -32,7 +32,7 @@ def tests_for_han_htg_thesis(load):
     assert r.missing(120, 2.0) == []
     assert len(r.missing(100, 1.5)) == 2
 
-def tests_for_han_htg_translate(load, variant):
+def tests_for_vy_th_translate(load, variant):
     tr = load("w1", "translate")
     if variant == 1:
         assert tr.binary_search([10, 20, 30, 40, 50], 30) == 2
@@ -53,7 +53,7 @@ def tests_for_han_htg_translate(load, variant):
         assert tr.gcd(7, 5) == 1
         assert tr.gcd(0, 7) == 7
 
-def tests_for_han_htg_timetable(load):
+def tests_for_vy_th_timetable(load):
     tt = load("w1", "timetable")
     assert tt.by_day([("ENG10001", "Wed"), ("CSC10022", "Thu"), ("CSC10022", "Mon"), ("CSC10018", "Mon")]) == {
     'Mon': ['CSC10018', 'CSC10022'],
