@@ -32,8 +32,8 @@
 | nhat_npm | w3 |  |  |  |  |  |
 | nhat_npm | w4 |  |  |  |  |  |
 | nhat_npm | w5 |  |  |  |  |  |
-| nhat_dm | w1 |  |  |  |  |  |
-| nhat_dm | w2 |  |  |  |  |  |
-| nhat_dm | w3 |  |  |  |  |  |
+| nhat_dm | w1 | #17 | #18 | long_th | 5/5 | 4 |
+| nhat_dm | w2 | #39 | #44 | dieu_sp | 5/5 | 4 |
+| nhat_dm | w3 | #57 | #61 | dieu_sp | 3/3 | 4 |
 | nhat_dm | w4 |  |  |  |  |  |
 | nhat_dm | w5 |  |  |  |  |  |
