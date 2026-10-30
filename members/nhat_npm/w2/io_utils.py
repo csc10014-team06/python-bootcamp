@@ -2,12 +2,13 @@
 import csv
 import json
 from datetime import date
-from pathlib import Path
+from os import PathLike
 
 from .models import Task
 
 
-def load_tasks(path) -> list[Task]:
+def load_tasks(path: str | PathLike[str]) -> list[Task]:
+    """Load and validate tasks from a CSV file."""
     tasks = []
 
     with open(path, "r", newline="", encoding="utf-8") as file:
@@ -50,7 +51,8 @@ def load_tasks(path) -> list[Task]:
     return tasks
 
 
-def save_json(tasks: list[Task], path) -> None:
+def save_json(tasks: list[Task], path: str | PathLike[str]) -> None:
+    """Save tasks as an indented JSON array."""
     data = [
         {
             "title": task.title,

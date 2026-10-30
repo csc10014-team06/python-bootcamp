@@ -1,5 +1,10 @@
 
-def test_w1_1_summary_edge_case(load):
+from collections.abc import Callable
+from types import ModuleType
+
+
+def test_w1_1_summary_edge_case(load: Callable[[str, str], ModuleType]) -> None:
+    """Check that equal grades produce the expected summary."""
     g = load("w1", "grades")
 
     # EDGE CASE: All scores are identical.
@@ -11,15 +16,18 @@ def test_w1_1_summary_edge_case(load):
     }
 
 
-def test_w1_2_word_count_edge_case(load):
+def test_w1_2_word_count_edge_case(load: Callable[[str, str], ModuleType]) -> None:
+    """Check that punctuation-only text contains no words."""
     t = load("w1", "text_tools")
 
+    assert t.word_count("hello,world") == {"hello": 1, "world": 1}
     # EDGE CASE: Punctuation-only input contains no words.
     assert t.word_count("... !!! , ; ?") == {}
     assert t.top_k("... !!! , ; ?", 3) == []
 
 
-def test_w1_3_thesis_edge_case(load):
+def test_w1_3_thesis_edge_case(load: Callable[[str, str], ModuleType]) -> None:
+    """Check that a low GPA prevents thesis registration."""
     r = load("w1", "rules")
 
     # EDGE CASE: Enough credits, but GPA is below the threshold.
@@ -32,7 +40,8 @@ def test_w1_3_thesis_edge_case(load):
     ]
 
 
-def test_w1_4_bubble_sort(load):
+def test_w1_4_bubble_sort(load: Callable[[str, str], ModuleType]) -> None:
+    """Check bubble sort on ordinary, empty, and repeated-value inputs."""
     tr = load("w1", "translate")
 
     assert tr.bubble_sort([3, 1, 2]) == [1, 2, 3]
@@ -54,7 +63,8 @@ def test_w1_4_bubble_sort(load):
     assert sorted(result) == sorted(values)
 
 
-def test_w1_5_timetable_edge_case(load):
+def test_w1_5_timetable_edge_case(load: Callable[[str, str], ModuleType]) -> None:
+    """Check grouping when a course appears on more than one day."""
     tt = load("w1", "timetable")
 
     # EDGE CASE: The same course appears on different days.
