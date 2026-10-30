@@ -131,7 +131,3 @@ pytest -q tests/test_w3.py
 ruff check shared/study_planner
 
 ```
-
-```
-
-```
