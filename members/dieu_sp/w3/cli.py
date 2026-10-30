@@ -1,6 +1,7 @@
 """W3-3: python -m members.dieu_sp.w3.cli tasks.csv --hours 2 [--today YYYY-MM-DD] prints a study plan."""
 
 import argparse
+import math
 import sys
 from datetime import date
 
@@ -13,13 +14,13 @@ from shared.study_planner.validate import validate
 
 
 def _hours(text: str) -> float:
-    """argparse type for --hours: a number of hours that is not negative."""
+    """argparse type for --hours: a positive, finite number of hours."""
     try:
         hours = float(text)
     except ValueError:
         raise argparse.ArgumentTypeError(f"not a number: {text!r}") from None
-    if hours < 0:
-        raise argparse.ArgumentTypeError(f"must not be negative: {text!r}")
+    if not math.isfinite(hours) or hours <= 0:
+        raise argparse.ArgumentTypeError(f"must be a positive number: {text!r}")
     return hours
 
 
