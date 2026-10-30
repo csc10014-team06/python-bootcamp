@@ -98,17 +98,26 @@ except ImportError:
         return leftovers
 
 
+def build_parser() -> argparse.ArgumentParser:
+    """Return the argument parser for python -m shared.study_planner."""
+    parser = argparse.ArgumentParser(
+        prog="python -m shared.study_planner",
+        description="Prioritise the tasks in a CSV and plan tonight's study hours.",
+    )
+    parser.add_argument("path", help="tasks CSV with header title,importance,effort_h,deadline")
+    parser.add_argument("--hours", type=float, default=2.0, metavar="H",
+                        help="hours available tonight (default: 2)")
+    parser.add_argument("--today", type=str, default=None, metavar="YYYY-MM-DD",
+                        help="reference date (default: today)")
+    return parser
+
+
 def main(argv: list[str] | None = None) -> int:
     if argv is None:
         argv = sys.argv[1:]
 
-    parser = argparse.ArgumentParser(prog="study-planner")
-    parser.add_argument("path")
-    parser.add_argument("--hours", type=float, default=2.0)
-    parser.add_argument("--today", type=str, default=None)
-
     try:
-        args = parser.parse_args(argv)
+        args = build_parser().parse_args(argv)
     except SystemExit as exc:
         return exc.code if isinstance(exc.code, int) else 2
 
