@@ -18,8 +18,8 @@
 | vy_th | w4 |  |  |  |  |  |
 | vy_th | w5 |  |  |  |  |  |
 | han_htg | w1 | #16 | #19 | nhat_dm | 5/5 | 4 |
-| han_htg | w2 |  |  |  |  |  |
-| han_htg | w3 |  |  |  |  |  |
+| han_htg | w2 | #46 | #49 | truyen_lp | 5/5 | 6 |
+| han_htg | w3 | #63 | #68 | truyen_lp | 3/3 | 5.5 |
 | han_htg | w4 |  |  |  |  |  |
 | han_htg | w5 |  |  |  |  |  |
 | truyen_lp | w1 |  |  |  |  |  |
