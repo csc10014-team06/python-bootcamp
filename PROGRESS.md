@@ -22,9 +22,9 @@
 | han_htg | w3 |  |  |  |  |  |
 | han_htg | w4 |  |  |  |  |  |
 | han_htg | w5 |  |  |  |  |  |
-| truyen_lp | w1 |  |  |  |  |  |
-| truyen_lp | w2 |  |  |  |  |  |
-| truyen_lp | w3 |  |  |  |  |  |
+| truyen_lp | w1 | #20 | #20 |  | 5/5 | 3.5 |
+| truyen_lp | w2 | #53 | #52 | nhat_npm | 3/3 | 4 |
+| truyen_lp | w3 | #56 |  | nhat_dm | 3/3 | 3.5 |
 | truyen_lp | w4 |  |  |  |  |  |
 | truyen_lp | w5 |  |  |  |  |  |
 | nhat_npm | w1 |  |  |  |  |  |
