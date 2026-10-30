@@ -3,7 +3,6 @@
 import re
 from datetime import date, timedelta
 
-
 _IN_DAYS = re.compile(r"in\s+(\d+)\s+days?", re.IGNORECASE)
 _WEEKDAYS = {
     name.lower(): day

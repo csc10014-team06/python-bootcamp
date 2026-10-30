@@ -1,4 +1,5 @@
-def summary(scores: list[float]) -> dict:
+def summary(scores: list[float]) -> dict[str, float]:
+    """Return the minimum, maximum, mean, and median of ``scores``."""
     if len(scores) == 0:
         raise ValueError("scores is not valid")
     ordered = sorted(scores)

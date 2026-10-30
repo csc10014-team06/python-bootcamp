@@ -1,5 +1,6 @@
 
 def word_count(text: str) -> dict[str, int]:
+    """Count words after lowercasing text and removing basic punctuation."""
     text = text.lower()
     text = text.translate(str.maketrans("", "", ".,!?;:"))
     words = text.split()
@@ -16,6 +17,7 @@ def word_count(text: str) -> dict[str, int]:
 
 
 def top_k(text: str, k: int) -> list[tuple[str, int]]:
+    """Return up to ``k`` words ordered by count and then alphabetically."""
     if k <= 0:
         return []
 

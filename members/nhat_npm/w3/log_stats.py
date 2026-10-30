@@ -1,8 +1,8 @@
 """Summarize request counts and latency percentiles from a chat log."""
 
 from collections import Counter, defaultdict
+from collections.abc import Iterable
 from math import ceil
-from typing import Iterable
 
 
 def analyse(pairs: Iterable[tuple[str, float]]) -> dict[str, object]:
