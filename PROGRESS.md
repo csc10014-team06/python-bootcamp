@@ -8,8 +8,8 @@
 | long_th | w4 |  |  |  |  |  |
 | long_th | w5 |  |  |  |  |  |
 | dieu_sp | w1 | #29 | #30 | nhat_npm | 5/5 | 1 |
-| dieu_sp | w2 | #50 | #51 | nhat_npm | 3/3 |  |
-| dieu_sp | w3 | #73 | #74 | nhat_npm | 3/3 |  |
+| dieu_sp | w2 | #50 | #51 | nhat_npm | 3/3 | 3 |
+| dieu_sp | w3 | #73 | #74 | nhat_npm | 3/3 | 3 |
 | dieu_sp | w4 |  |  |  |  |  |
 | dieu_sp | w5 |  |  |  |  |  |
 | vy_th | w1 |  #14|  #15|  han\_htg |  5/5|  2.5|
