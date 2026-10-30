@@ -1,10 +1,10 @@
 def can_register_thesis(credits: int, gpa: float) -> bool:
-    if credits >= 120 and gpa >= 2.0:
-        return True
+    """Check whether a student meets thesis registration requirements."""
+    return credits >= 120 and gpa >= 2.0
 
-    return False
 
-def missing(credits, gpa) -> list[str]:
+def missing(credits: int, gpa: float) -> list[str]:
+    """List the requirements missing for thesis registration."""
     result = []
 
     if credits < 120:

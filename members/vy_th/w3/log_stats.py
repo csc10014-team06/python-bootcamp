@@ -1,8 +1,9 @@
 from collections import Counter, defaultdict
 from math import ceil
 
-def analyse(pairs: list[tuple[str, float]]) -> dict:
-    """Analyse request counts and p95 latency for each route."""
+
+def analyse(pairs: list[tuple[str, float]]) -> dict[str, object]:
+    """Count requests and calculate p95 latency by route."""
     counts = Counter()
     latencies = defaultdict(list)
 

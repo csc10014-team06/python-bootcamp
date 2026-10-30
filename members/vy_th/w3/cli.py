@@ -4,9 +4,11 @@ from datetime import date
 from pathlib import Path
 
 from members.vy_th.w2.io_utils import load_tasks
+from members.vy_th.w2.models import Task
 
 
 def main() -> int:
+    """Parse CLI arguments and print a study plan."""
     parser = argparse.ArgumentParser(description="Daily study planner")
 
     parser.add_argument("csv_file", type=Path)
@@ -32,7 +34,8 @@ def main() -> int:
         print(f"Error: invalid CSV data: {exc}", file=sys.stderr)
         return 1
 
-    def priority(task):
+    def priority(task: Task) -> float:
+        """Calculate task priority based on importance and deadline."""
         days_left = max((task.deadline - args.today).days, 1)
         return task.importance / days_left
 
@@ -60,6 +63,7 @@ def main() -> int:
         print("  No tasks scheduled.")
 
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())
