@@ -10,7 +10,7 @@ def load_tasks(path: Union[str, Path]) -> List[Task]:
     tasks = []
     with open(path, mode="r", encoding="utf-8") as f:
         reader = csv.reader(f)
-        header = next(reader, None)  
+        _ = next(reader, None)  
         line_no = 1  
 
         for row in reader:
