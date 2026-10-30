@@ -2,16 +2,19 @@ import csv
 import json
 from dataclasses import asdict
 from datetime import date
+from pathlib import Path
 
 from .models import Task
 
-def load_tasks(path) -> list[Task]:
+
+def load_tasks(path: str | Path) -> list[Task]:
+    """Load and validate tasks from a CSV file."""
     tasks = []
 
     with open(path, newline="", encoding="utf-8") as f:
         data = csv.DictReader(f)
 
-        for line_num, row in enumerate(data, start = 2):
+        for line_num, row in enumerate(data, start=2):
             try:
                 if None in row:
                     raise ValueError("extra column")
@@ -32,7 +35,9 @@ def load_tasks(path) -> list[Task]:
 
     return tasks
 
-def save_json(tasks, path):
+
+def save_json(tasks: list[Task], path: str | Path) -> None:
+    """Save tasks to a JSON file."""
     data = []
 
     for task in tasks:
