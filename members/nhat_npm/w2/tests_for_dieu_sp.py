@@ -20,6 +20,7 @@ def test_w1_2_word_count_edge_case(load: Callable[[str, str], ModuleType]) -> No
     """Check that punctuation-only text contains no words."""
     t = load("w1", "text_tools")
 
+    assert t.word_count("hello,world") == {"hello": 1, "world": 1}
     # EDGE CASE: Punctuation-only input contains no words.
     assert t.word_count("... !!! , ; ?") == {}
     assert t.top_k("... !!! , ; ?", 3) == []

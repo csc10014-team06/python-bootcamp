@@ -36,3 +36,20 @@ def test_w3_3_cli(member):
     bad = subprocess.run([sys.executable, "-m", f"members.{member}.w3.cli", "missing.csv", "--hours", "2"],
                          capture_output=True, text=True, cwd=BOOTCAMP)
     assert bad.returncode == 1
+    zero_hours = subprocess.run(
+        [sys.executable, "-m", f"members.{member}.w3.cli", str(BOOTCAMP / "samples" / "tasks.csv"),
+         "--hours", "0"],
+        capture_output=True,
+        text=True,
+        cwd=BOOTCAMP,
+    )
+    assert zero_hours.returncode == 1
+    assert "greater than zero" in zero_hours.stderr
+
+    missing_hours = subprocess.run(
+        [sys.executable, "-m", f"members.{member}.w3.cli", str(BOOTCAMP / "samples" / "tasks.csv")],
+        capture_output=True,
+        text=True,
+        cwd=BOOTCAMP,
+    )
+    assert missing_hours.returncode == 2

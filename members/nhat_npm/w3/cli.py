@@ -3,6 +3,7 @@
 import argparse
 import sys
 from datetime import date
+from math import isfinite
 from pathlib import Path
 
 from members.nhat_npm.w2.io_utils import load_tasks
@@ -48,7 +49,12 @@ def main(argv: list[str] | None = None) -> int:
     """Run the study planner CLI and return its process exit code."""
     parser = argparse.ArgumentParser(description="Plan study time from a tasks CSV.")
     parser.add_argument("path", type=Path, help="path to a tasks CSV file")
-    parser.add_argument("--hours", type=float, default=2.0, help="available study hours")
+    parser.add_argument(
+        "--hours",
+        type=float,
+        required=True,
+        help="positive number of available study hours",
+    )
     parser.add_argument(
         "--today",
         type=date.fromisoformat,
@@ -61,8 +67,8 @@ def main(argv: list[str] | None = None) -> int:
     if not args.path.is_file():
         print(f"Error: file not found: {args.path}", file=sys.stderr)
         return 1
-    if args.hours < 0:
-        print("Error: --hours must be nonnegative.", file=sys.stderr)
+    if not isfinite(args.hours) or args.hours <= 0:
+        print("Error: --hours must be a finite number greater than zero.", file=sys.stderr)
         return 1
 
     try:

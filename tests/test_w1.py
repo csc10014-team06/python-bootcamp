@@ -12,6 +12,7 @@ def test_w1_1_summary(load):
 def test_w1_2_word_count(load):
     t = load("w1", "text_tools")
     assert t.word_count("Git is fun. Git is fast!") == {"git": 2, "is": 2, "fun": 1, "fast": 1}
+    assert t.word_count("hello,world") == {"hello": 1, "world": 1}
     assert t.top_k("Git is fun. Git is fast!", 2) == [("git", 2), ("is", 2)]
     assert t.top_k("", 3) == []
 
